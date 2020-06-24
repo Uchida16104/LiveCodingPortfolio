@@ -1,0 +1,8 @@
+//play "beep"+Math.sqrt(int(random(5))),"x"
+//play "tic","----x--x"
+//play "toc","xxxx-xx-"
+//play "growl"+Math.cbrt(int(random(10))),"x"
+//play "hoover"+Math.sin(int(random(2))),"x"
+//play "siren"+Math.cos(int(random(4))),"x"
+//play "snare","----x--x"
+//play "tranceKick","xxxx-xx-"
