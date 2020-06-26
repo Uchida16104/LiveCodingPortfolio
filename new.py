@@ -1,0 +1,5 @@
+p1 >> acid()
+p2 >> pads()
+p3 >> bass()
+p4 >> dub()
+p5 >> dirt()
