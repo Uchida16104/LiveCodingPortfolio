@@ -1,3 +1,4 @@
+#It's a program for Sonic PI.
 n=60 #The value is note number. Change this to other figure. 
 s=0.5 #The value is rest frequency. Change this to other figure.
 for i in 0..12 #The values are showing how high the sound gets. For example when you set n=60, and "for i in 0..12", midi note is up by 72 (60+12) one sound at a time.
