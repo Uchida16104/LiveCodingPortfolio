@@ -31,6 +31,3 @@ src(s0).diff(shape([3,7].smooth()).scale(2)).mult(osc(10,1).diff(gradient(1)).di
 render()
 src(s0).modulate(voronoi(3)).blend(shape([2].smooth().offset(),[0.1,0.5].smooth().offset(),[0.5,0.1].smooth().offset()).mult(osc(10,1).diff(gradient(15))).contrast(5)).scale(()=>(Math.sin(time)*1.5)).repeat(2,2).blend(osc(1,2,300).diff(gradient(1).hue(()=>(Math.sin(time)),()=>(Math.cos(time)),()=>(Math.tan(time)))).color([0,0,0,1,1,1,1].smooth(),[0,1,1,0,0,1,1].smooth(),[1,0,1,0,1,0,1].smooth()).scale(0.015625).invert(1).blend(shape([3,7].smooth(),0.1,0.5).contrast(5).scale(1.25))).out(o3)
 render()
-
-change to write  "scale(1.25)" >> "()=>(a.fft[0])"
-after movie capturing, back it original
