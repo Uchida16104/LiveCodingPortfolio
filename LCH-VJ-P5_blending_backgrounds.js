@@ -1,8 +1,8 @@
 //Blending backgrounds
 //by Hirotoshi Uchida
 //Twitter : @HirotoshiUchida
-//Based on https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-Wave_beam_meets_shape_expansion_with_moving_blocks.js?fbclid=IwAR2zAd5M3vM8PmpyTK57k3rAOzZ0s1Nm78PRysIgnI0FUH9YjuW6GSyFnuo
-//Also referred to https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_hydra.js?fbclid=IwAR2-Un1JN0fjc2Fo1jkkazBS1E6XRCGddWNSs8aqbcn1HgKNtU_VcjcGRes
+//Based on https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-Wave_beam_meets_shape_expansion_with_moving_blocks.js
+//Also referred to https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_hydra.js
 //This is having in shown on https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_blending_backgrounds.js
 
 p1 = new P5()
@@ -10,9 +10,9 @@ let c = p1.color(p1.frameCount*256,p1.frameCount*256,p1.frameCount*256);
 p1.fill(c);
 p1.noStroke();
 p1.textFont();
-p1.textSize(width / 5);
+p1.textSize(width / 10);
 p1.textAlign(p1.CENTER, p1.CENTER);
-p1.text('code',500,500)
+p1.text('LiveCoding',500,500)
 //p1.clear()
 p1.stroke(p1.frameCount*256,p1.frameCount*256,p1.frameCount*256)
 p1.hide()
