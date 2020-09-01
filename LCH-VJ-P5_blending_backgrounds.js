@@ -12,7 +12,7 @@ p1.noStroke();
 p1.textFont();
 p1.textSize(width / 10);
 p1.textAlign(p1.CENTER, p1.CENTER);
-p1.text('LiveCoding',500,500)
+p1.text('hydra synth',500,500)
 //p1.clear()
 p1.stroke(p1.frameCount*256,p1.frameCount*256,p1.frameCount*256)
 p1.hide()
