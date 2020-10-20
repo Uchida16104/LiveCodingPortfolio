@@ -1,6 +1,7 @@
 //If you follow the way
 //@HirotoshiUchida
-//This is edited "https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_blending_backgrounds.js" for VJ of theme songs of aitunag (https://aitunag.com/).
+//This is edited "https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_blending_backgrounds.js" for VJ of theme songs of for theme song of Social support forum for people with severe disabilities(https://aitunag.com/2020%e5%b9%b411%e6%9c%8828%e6%97%a5%e3%80%80%e9%87%8d%e5%ba%a6%e9%9a%9c%e3%81%8c%e3%81%84%e8%80%85%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a9%e3%83%a0/) will be held on 2020.11.28.
+//YouTube : https://youtu.be/FuZf_9L2Xg4
 speed = 0.5;
 frame = 1000;
 time = 1;
