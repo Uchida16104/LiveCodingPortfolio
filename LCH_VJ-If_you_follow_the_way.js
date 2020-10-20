@@ -1,6 +1,6 @@
 //If you follow the way
 //@HirotoshiUchida
-//This is edited "https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_blending_backgrounds.js" for vj of theme songs of aitunag (https://aitunag.com/).
+//This is edited "https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH-VJ-P5_blending_backgrounds.js" for VJ of theme songs of aitunag (https://aitunag.com/).
 speed = 0.5;
 frame = 1000;
 time = 1;
