@@ -190,7 +190,8 @@ src(s0)
             )
         )
       )
-      .scale(() => a.fft[2] * 1.75 + 1)
+      .scale(() => a.fft[2] * 1.75 + 1),
+    [0, 1].smooth()
   )
   .scale([0.5, 0.75].smooth())
   .out();
