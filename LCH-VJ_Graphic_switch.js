@@ -269,6 +269,6 @@ shape(
   )
   .out(o2);
 solid()
-  .add(o1, [1, 0].smooth(degree)
-  .add(o2, [0, 1].smooth(degree)
+  .add(o1, [1, 0].smooth(degree))
+  .add(o2, [0, 1].smooth(degree))
   .out();
