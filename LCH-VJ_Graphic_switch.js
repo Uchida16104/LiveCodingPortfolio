@@ -1,4 +1,4 @@
-//Switching graphic
+//Graphic switch
 //@HirotoshiUchida
 //This is a work reedited "https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCH_VJ-If_you_follow_the_way.js".
 speed = 0.5;
