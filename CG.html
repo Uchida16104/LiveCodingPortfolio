@@ -30,6 +30,7 @@
 <br>
 <button onclick="moonmodulation()"> Moon modulation </button>
 <button onclick="limitedpatterns()"> Limited patterns </button>
+<button onclick="colofulcells()"> Colorful cells </button>
 <br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
@@ -99,6 +100,10 @@ solid().add(o1,[1,0,0].smooth()).add(o2,[0,1,0].smooth()).add(o3,[0,0,1].smooth(
 shape([3,7].smooth(),[0,1].smooth(),[1,0].smooth()).modulate(o1,[0,1].ease('sin')).saturate(5).posterize(5).invert().colorama([-1,1].smooth().fast(1/16)).luma([-1,1].smooth()).layer(voronoi(20,1,[0,1].smooth()).add(osc(10,0.5,300).diff(gradient(1)).kaleid([3,7].smooth()).scroll(()=>Math.sin(time),()=>Math.cos(time)).scale(1/4).blend(o1,[0,1].ease('easeInOut').smooth().fast(1/4)),[0,1].smooth()).color(1,1,1,[0,1].smooth())).blend(osc(10,1).mask(noise().thresh(),[1,0].smooth()).mask(shape([3,7].smooth()).modulate(voronoi(3)).repeat(),[0,1].smooth()),[1,0].smooth()).blend(solid(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).mult(voronoi(3,[0,1/2].smooth().fast(1/64),[0,1/2].smooth().fast(1/64))),[0,1].smooth()).out(o1)
 shape(2,0.001,0.005).modulate(noise([0,3].smooth())).rotate([0,1].smooth()).rotate(()=>Math.sin(time)).rotate([0,1].ease('sin')).rotate(()=>Math.cos(time)).rotate([1,0].ease('easeInOut')).rotate(()=>Math.sin(timme)).layer(noise([0,5].smooth()).thresh().invert([0,1].smooth()).blend(o2).color(1,1,1,[1,0].smooth())).mask(shape([1,2].smooth()).scroll(()=>Math.sin(time),()=>Math.cos(time)).rotate(1,1).repeat(5,5).contrast([1,3].smooth()),[0,1].smooth()).out(o2)
 shape([3,7].smooth(),[0,1].smooth(),[1,0].smooth()).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).colorama([0,5].smooth().fast(1/16)).luma([0,1].smooth().fast(1/16))).kaleid([3,7].smooth()).modulateKaleid(shape([3,7].smooth(),[0,1].smooth(),[1,0].smooth()),[3,7].smooth()).layer(noise(7.5).thresh().modulate(o3).color(1,1,1,[1,0,0].smooth())).layer(voronoi(1,1,5).color(1,1,1,[0,1,0].smooth())).layer(osc(10,1,300).modulate(voronoi(3)).modulate(noise(3)).color([0,0,1].smooth())).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).invert([0,1].smooth().fast(1/4))).blend(shape([3,7].smooth(),[0,1].smooth(),[1,0].smooth()).rotate(()=>Math.tan(time)).scale(()=>Math.tan(time)*(-1)),[0,1].smooth()).out(o3)
+      }
+
+function colofulcells() {
+osc(10,1).mult(osc(10,1).rotate(1.57)).add(shape(4,0,1).repeat(2,2).scroll([0,1].smooth(0.5),[0,1].smooth(0.5))).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time))).saturate([0,5].smooth()).brightness([0,1/8].smooth()).contrast([2,5].smooth()).out()
       }
 
     </script>
