@@ -36,6 +36,9 @@
 <button onclick="seamofwavelightversion()"> Seam of wave (light version) </button>
 <br>
 <button onclick="seamofwavedarkversion()"> Seam of wave (dark version) </button>
+<button onclick="marbleswithpaintoverandflash()"> Marbles with paintover and flash </button>
+<br>
+<button onclick="glossofdropandsphereescalator()"> Gloss of drop and sphere escalator </button>
 <br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
@@ -123,6 +126,19 @@ function seamofwavedarkversion() {
 shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,5].smooth()).brightness([0,1].smooth()).contrast([1,3].smooth()).scale(0.1)).rotate(()=>Math.sin(time)).diff(shape([3,7].reverse().smooth(),[0,1].reverse().smooth(),[0,1].smooth()).mult(osc(-10,-0.5,300).diff(gradient(-1)).diff(solid([0,0,0,0,1,1,1,1].smooth().fast(1/2),[0,0,1,1,0,0,1,1].smooth().fast(1/2),[0,1,0,1,0,1,0,1].smooth().fast(1/2))).hue(()=>Math.sin(time/2),()=>Math.cos(time/2),()=>Math.tan(time/2)).saturate([0,5].smooth().fast(1/2)).brightness([0,1].smooth().fast(1/2)).contrast([1,3].smooth().fast(1/2)).scale(0.1)).rotate(()=>Math.cos(time))).scale(1.5).invert().out()
       }
 
+function marbleswithpaintoverandflash() {
+t = 8;
+marbles = () => osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,5].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).diff(noise(()=>time/1000).thresh()).mask(voronoi(2,1,5).scale(3)).scale(0.1).invert();
+flash = () => shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama([0,10].smooth()).mult(osc(10,0.5).diff(osc(10,0.5).rotate(1.57))).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.cos(time),()=>Math.tan(time),()=>Math.sin(time)).saturate([0,5].reverse().ease('sin')).brightness([0,1].reverse().smooth()).contrast([0,1].reverse().smooth()).invert());
+marbles().invert().add(flash()).blend(o0,[0,t-1/t].smooth().fast(1/t)).out(o0);
+      }
+
+function glossofdropandsphereescalator() {
+solid().add(o3).modulateScale(src(o3).add(noise(1).thresh()),()=>Math.tan(time)).out(o0)
+shape(360,[0.1,0.5].smooth(),[0.1,0.5].reverse().smooth()).scale(0.99).repeat(8,8).scroll(()=>(time/-10),()=>(time/-10)).diff(osc(50,0.25).mult(osc(50,0.25).rotate(1.57)).thresh()).out(o1)
+voronoi(1,4,3).repeat(8,8).scroll(()=>(time/-10),()=>(time/-10)).blend(osc(50,0.25).mult(osc(50,0.25).rotate(1.57)).thresh()).out(o2)
+solid().add(o1,[1,0].fast(1/4)).add(o2,[0,1].fast(1/4)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1].smooth(),[0,0,0,0,1,1,1,1].smooth(),[0,0,1,1].smooth(),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,5].ease('sin')).brightness([0,1].smooth()).contrast([1,2].smooth())).scale([0,1].smooth().fast(1/2)).out(o3)
+      }
     </script>
   </body>
 </html>
