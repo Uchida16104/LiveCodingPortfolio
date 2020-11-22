@@ -1,4 +1,5 @@
 //Repetition of smooth bounce
+"https://gibber.cc/?path=Hirotoshi%20Uchida/publications/Repetition%20of%20smooth%20bounce"
 
 bd=XOX('x...x...x...x...');
 
