@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>graphic works</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    
+    <!-- import the latest version of hydra synth-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+  <body>
+    <button onclick="osc(2,1,300).diff(gradient(1).blend(solid([0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1],0.1)).diff(noise(1))).mult(shape([3,4,5,6,7,8,9,10,11,12],[0.7],[0.4,0.5,0.6,0.7,0.8])).mult(voronoi(100,1,1)).modulateRotate(o0).modulateScale(o0).blend(o0).scale(()=>(a.fft[0]*0.5+1)).out()"> Under the sea </button>
+    <button onclick="production()"> Production </button>
+    <button onclick="carpet()"> Carpet </button>
+    <button onclick="flower()"> Flower </button>
+    <button onclick="donut()"> Donut </button>
+    <button onclick="slowmotion()"> Slow motion </button>
+<br>
+<button onclick="simulationfromeachperspectiveofabloodvesselexpressedin2dthatlookslike3d()"> Simulation from each perspective of a blood vessel expressed in 2D that looks like 3D </button>
+<br>
+<button onclick="movementsatdifferenttimings1()"> Movements at different timings (version 1) </button>
+<button onclick="movementsatdifferenttimings2()"> Movements at different timings (version 2) </button>
+<br>
+<button onclick="graphicswitchwhitoutp5js()"> Graphic switch (without p5.js version) </button>
+<button onclick="graphicswitchedited()"> Graphic switch (edited version) </button>
+<br>
+<button onclick="moonmodulation()"> Moon modulation </button>
+<button onclick="limitedpatterns()"> Limited patterns </button>
+<button onclick="colofulcells()"> Colorful cells </button>
+<br>
+<button onclick="electricscoreboardandsquaresmoke()"> Electric scoreboard and square smoke </button>
+<button onclick="seamofwavelightversion()"> Seam of wave (light version) </button>
+<br>
+<button onclick="seamofwavedarkversion()"> Seam of wave (dark version) </button>
+<button onclick="marbleswithpaintoverandflash()"> Marbles with paintover and flash </button>
+<br>
+<button onclick="glossofdropandsphereescalator()"> Gloss of drop and sphere escalator </button>
+<button onclick="kaleidcoaster()"> Kaleid coaster </button>
+<br>
+<button onclick="imaginetheimageofthesea()"> Imagine the image of the sea </button>
+<button onclick="surge()"> Surge </button>
+<button onclick="surgepaintoverversion()"> Surge (paintover version) </button>
+<br>
+<button onclick="electriccircuit()"> Electric circuit </button>
+<button onclick="retromodern()"> Retro modern </button>
+<button onclick="blurandpaintover()"> Blur and paintover </button>
+<br>
+<button onclick="likealacesheercurtainthatcirclesdesignshiftsandpopsout()"> Like a lace sheer curtain that circles design shifts and pops out </button>
+<br>
+<button onclick="vividinvertrosemodulation()"> Vivid invert rose modulation </button>
+<button onclick="colorandactivefluidassignment()"> Color and active fluid assignment </button>
+<br>
+<button onclick="fireandsmokestainedinspectralcolors()"> Fire and smoke stained in spectral colors </button>
+<button onclick="rhombusswirl()"> Rhombus swirl </button>
+<br>
+<button onclick="unusuallyshapedtreetrunkforestandcolorfulzebra()"> Unusually shaped tree trunk forest and coloful zebra </button>
+<button onclick="waveandlaser()"> Wave and laser </button>
+<br>
+    <canvas id="myCanvas" width="360px" height="360px"></canvas>
+<script src="C:\Users\sony\Desktop\CG\CG.js"></script>
+  </body>
+</html>
