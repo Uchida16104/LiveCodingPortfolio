@@ -1,3 +1,4 @@
+setResolution(2160, 3840);
 setFunction({
   name: "mesh",
   type: "src",
@@ -142,8 +143,9 @@ osc(1, 2, 300)
           .fast(1 / 4)
       )
       .thresh(),
+    () => a.fft[0] * 2 + 4,
     (speed = 1 / 4),
-    (fps = 22.5),
+    (fps = 8),
     (bpm = 45)
   )
   .modulate(
