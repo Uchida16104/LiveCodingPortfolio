@@ -1,4 +1,3 @@
-setResolution(2160, 3840);
 setFunction({
   name: "mesh",
   type: "src",
