@@ -84,9 +84,9 @@ p5.draw = () => {
   p5.rotateZ(time);
   p5.push();
   p5.noStroke();
-  p5.torus(100, 25);
+  p5.torus(50, 25);
   p5.erase();
-  p5.sphere(100);
+  p5.sphere(50);
   p5.noErase();
   p5.pop();
 };
