@@ -1,0 +1,4 @@
+(
+FoxDot.start;
+FoxDot.midi;
+);
