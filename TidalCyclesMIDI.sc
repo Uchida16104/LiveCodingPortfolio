@@ -1,3 +1,4 @@
+(
 SuperDirt.start;
 MIDIClient.init;
 ~midiOut1 = MIDIOut.newByName("IACDriver", "Bus1");
@@ -32,3 +33,4 @@ MIDIClient.init;
 ~dirt.soundLibrary.addMIDI(\midi15, ~midiOut15);
 ~midiOut16 = MIDIOut.newByName("IACDriver", "Bus16");
 ~dirt.soundLibrary.addMIDI(\midi16, ~midiOut16);
+);
