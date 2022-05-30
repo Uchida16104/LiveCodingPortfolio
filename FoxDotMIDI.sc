@@ -1,4 +1,2 @@
-(
 FoxDot.start;
 FoxDot.midi;
-);
