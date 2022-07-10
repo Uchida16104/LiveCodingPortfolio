@@ -1,0 +1,11 @@
+d1
+$ jux (slow 16)
+$ iter 8
+$ stutter 4 (1/8)
+$ fast 0.25
+$ s "midi2"
+#n "<-20 -18 -15 -13>"
+
+d2 $ s "short*16" #amp (cF 1 "64") #coarse (cF 1 "72") # distort (cF 1 "80") #speed (cF 1 "90") # room (cF 1 "99")
+
+hush
