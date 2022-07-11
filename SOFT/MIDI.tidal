@@ -6,6 +6,6 @@ $ fast 0.25
 $ s "midi2"
 #n "<-20 -18 -15 -13>"
 
-d2 $ s "short*16" #amp (cF 1 "64") #coarse (cF 1 "72") # distort (cF 1 "80") #speed (cF 1 "90") # room (cF 1 "99")
+d2 $ s "short*16" #amp (cF 3 "64") #coarse (cF 3 "72") # distort (cF 3 "80") #speed (cF 3 "90") # room (cF 3 "99")
 
 hush
