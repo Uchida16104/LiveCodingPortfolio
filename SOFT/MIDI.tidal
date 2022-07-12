@@ -1,11 +1,12 @@
 d1
-$ jux (slow 16)
+$ jux (slow "<2 4 8 16>")
 $ iter 8
-$ stutter 4 (1/8)
-$ fast 0.25
+$ stutter 8 (1/4)
+$ fast "<0.5 1 2 4>"
 $ s "midi2"
-#n "<-20 -18 -15 -13>"
+#n "<0 2 2 4 5 9 14 23>"
+#amp 0.0625
 
-d2 $ s "short*16" #amp (cF 3 "64") #coarse (cF 3 "72") # distort (cF 3 "80") #speed (cF 3 "90") # room (cF 3 "99")
+d2 $ s "short*16" #amp (cF 1 "64") #coarse (cF 1 "72") # distort (cF 1 "80") #speed (cF 1 "90") # room (cF 1 "99")
 
 hush
