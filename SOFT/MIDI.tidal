@@ -5,7 +5,7 @@ $ stutter 8 (1/4)
 $ fast "<0.5 1 2 4>"
 $ s "midi2"
 #n "<0 2 2 4 5 9 14 23>"
-#amp 0.0625
+#amp 0.015625
 
 d2 $ s "short*16" #amp (cF 1 "64") #coarse (cF 1 "72") # distort (cF 1 "80") #speed (cF 1 "90") # room (cF 1 "99")
 
