@@ -7,6 +7,23 @@ $ s "midi2"
 #n "<0 2 2 4 5 9 14 23>"
 #amp 0.015625
 
-d2 $ s "short*16" #amp (cF 1 "64") #coarse (cF 1 "72") # distort (cF 1 "80") #speed (cF 1 "90") # room (cF 1 "99")
+d2
+$ s "superhammond"
+#voice "<0,1,2,3,4,5,6,7,8,9>"
+#amp (cF 0.25 "<64 71 78 85 92 99>")
+#coarse (cF 4 "<71 78 85 92 99 64>")
+#distort (cF 0.5 "<78 85 92 99 64 71>")
+#speed (cF 2 "<85 92 99 64 71 78>")
+#accelerate (cF 0.75 "<92 99 64 71 78 85>")
+#n (cN 3 "<99 64 71 78 85 92>")
+#room (cF 0.875 "<99 92 85 78 71 64>")
+#legato  (cF 7 "<92 85 78 71 64 99>")
+#tremolodepth  (cF 0.625 "<85 78 71 64 99 92>")
+#tremolorate  (cF 5 "<78 71 64 99 92 85>")
+#phasr (cF 0.375 "<71 64 99 92 85 78>")
+#phasdp "2" #lpf (cF 3 "<64 71 78 85 92 99>")
+#vowel "a e i o u"
+#triode (cF 1 "<64 71 78 85 92 99>")
+#waveloss (cF 1 "<99 92 85 78 71 64>")
 
 hush
