@@ -26,4 +26,26 @@ $ s "superhammond"
 #triode (cF 1 "<64 71 78 85 92 99>")
 #waveloss (cF 1 "<99 92 85 78 71 64>")
 
+d3
+$every 2 (fast 8)
+$whenmod 4 3 (#n "<[1 2]*6 [3 4]*5>*7?")
+$jux (iter 32)
+$stutter 4 (1/16)
+$ s "voodoo"
+#amp "0.1"
+
+d4 $ stack [
+s "pad" #speed "0.95 1" #amp "0.5",
+s "ade:3" #amp "0.5"
+]
+
+d4
+$every 2 (slow 2)
+$whenmod 6 8 (#amp "0.125")
+$jux (iter 2)
+$stutter 4 (1/8)
+$s "midi2"
+#n "<2 5 9 14>"
+#legato "0.9"
+
 hush
