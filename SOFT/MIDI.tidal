@@ -34,12 +34,13 @@ $stutter 4 (1/16)
 $ s "voodoo"
 #amp "0.1"
 
-d4 $ stack [
+d4
+$ stack [
 s "pad" #speed "0.95 1" #amp "0.5",
 s "ade:3" #amp "0.5"
 ]
 
-d4
+d5
 $every 2 (slow 2)
 $whenmod 6 8 (#amp "0.125")
 $jux (iter 2)
