@@ -56,7 +56,7 @@ p5.mousePressed = () => {
 	if (value === 0) {
 		tune();
 	} else {
-		console.log("The sound is muted!!")
+		console.log("The sound is muted!!");
 	}
 };
 setFunction({
