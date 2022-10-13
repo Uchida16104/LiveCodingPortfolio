@@ -11,7 +11,7 @@ const option = {
 	},
 	portamento: 0.01,
 	volume: 0.01,
-}
+};
 
 function tune() {
 	let inst = ["pulse", "sine", "square", "sawtooth", "triangle"];
@@ -23,12 +23,12 @@ function tune() {
 		})
 		.toDestination();
 	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / x[xRandom]);
-}
+};
 let count = 0;
 let ms = 1000;
 const countUp = () => {
 	count++;
-}
+};
 const intervalId = setInterval(() => {
 	countUp();
 	if (count % o.length == 0) {
@@ -86,17 +86,17 @@ setFunction({
    return vec4(repeat, size, dist, 1.0);`,
 });
 s0.initCam()
-let freq = 0
-let rate = .1
-let init = .01
-let pattern = 99
-let thickness = () => (a.fft[freq] * rate + init)
-let lazer = 1
-let velocity = 10
-let glitter = 10
-let lumen = 1
-let transition = 10
-let cluster = () => (a.fft[freq] * rate * 2 + init * 100)
+let freq = 0;
+let rate = .1;
+let init = .01;
+let pattern = 99;
+let thickness = () => (a.fft[freq] * rate + init);
+let lazer = 1;
+let velocity = 10;
+let glitter = 10;
+let lumen = 1;
+let transition = 10;
+let cluster = () => (a.fft[freq] * rate * 2 + init * 100);
 brush = (form, weight) => shape(form, weight)
 	.diff(s1)
 	.scroll(() => mouse.x / -window.innerWidth + 1 / 2, () => mouse.y / -window.innerHeight + 1 / 2)
