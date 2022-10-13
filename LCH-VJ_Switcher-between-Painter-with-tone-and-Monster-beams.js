@@ -25,6 +25,7 @@ function tune() {
 	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / x[xRandom]);
 }
 let count = 0;
+let ms = 1000;
 const countUp = () => {
 	count++;
 }
@@ -35,7 +36,7 @@ const intervalId = setInterval(() => {
 	} else if (count % o.length == 1) {
 		render(o[1]);
 	}
-}, 1000);
+}, ms);
 p5 = new P5({
 	mode: "WEBGL"
 });
