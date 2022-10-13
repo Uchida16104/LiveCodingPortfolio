@@ -1,7 +1,6 @@
 await loadScript("https://unpkg.com/tone")
 let o = [o0, o3];
 let x = [1, 2, 4, 5, 8, 10];
-let xRandom = Math.floor(Math.random() * x.length);
 const option = {
 	envelope: {
 		attack: 0.01,
@@ -12,17 +11,20 @@ const option = {
 	portamento: 0.01,
 	volume: 0.01,
 };
-
+function random(array){
+    return array[Math.floor(Math.random() * array.length)];
+};
+let xRandom = random(x);
 function tune() {
 	let inst = ["pulse", "sine", "square", "sawtooth", "triangle"];
 	const synth = new Tone.MonoSynth({
 			oscillator: {
-				type: inst[Math.floor(Math.random() * inst.length)]
+				type: random(inst)
 			},
 			option
 		})
 		.toDestination();
-	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / x[xRandom]);
+	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / random(x));
 };
 let count = 0;
 let ms = 1000;
