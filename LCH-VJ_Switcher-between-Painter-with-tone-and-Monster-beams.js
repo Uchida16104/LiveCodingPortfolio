@@ -24,7 +24,7 @@ function tune() {
 			option
 		})
 		.toDestination();
-	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / random(x));
+	synth.triggerAttackRelease(mouse.x * window.innerWidth / 5000, mouse.y / window.innerHeight / xRandom);
 };
 let count = 0;
 let ms = 1000;
