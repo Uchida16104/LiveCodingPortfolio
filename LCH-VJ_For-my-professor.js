@@ -112,6 +112,28 @@ function mix() {
 function ishihara() {
 	return "pow(sin(st.y),cos(st.x))/tan(acos(st.x)/asin(st.y))";
 }
+p5 = new P5({
+	mode: 'WEBGL'
+})
+let i = 0;
+let j = 50;
+p5.hide()
+s0.initCam()
+s1.init({
+	src: p5.canvas
+})
+p5.draw = () => {
+	p5.background(0);
+	p5.noStroke();
+	p5.rotateX(time / 2);
+	p5.rotateY(time / 3);
+	p5.rotateZ(time / 5);
+	p5.scale(p5.width / 3600);
+	for (i = 0; i < j; i++) {
+		p5.translate(i - j, i, i + j);
+		p5.ellipsoid(30, 40, 40, 12, j);
+	}
+}
 professor = () => src(o0)
 	.mult(shape("pow(atan(st.x/st.y),tan(st.y/st.x))")
 		.repeat("asin(st.y)", "acos(st.x)"))
@@ -125,7 +147,6 @@ rgba = () => src(o0)
 	.g("acos(st.x)")
 	.b("atan(st.x/st.y)")
 	.a("tan(st.y/st.x)")
-s0.initCam()
 collaborate = () => src(s0)
 jiro([amount, 10].smooth()
 		.fast(amount / 10), [amount, 10].smooth()
@@ -147,5 +168,6 @@ jiro([amount, 10].smooth()
 	.invert()
 	.blend(o0, amount - (amount / 20))
 	//.layer(collaborate().sub(hsb().mask(rgba())))
+	//.add(s1)
 	.out()
 //screencap()
