@@ -131,7 +131,7 @@ p5.draw = () => {
 	p5.scale(p5.width / 3600);
 	for (i = 0; i < j; i++) {
 		p5.translate(i - j, i, i + j);
-		p5.ellipsoid(30, 40, 40, 12, j);
+		p5.ellipsoid(30, 40, 40, 12, i);
 	}
 }
 professor = () => src(o0)
