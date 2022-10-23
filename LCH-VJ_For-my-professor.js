@@ -18,7 +18,7 @@ setFunction({
 		{
 			name: 'gender',
 			type: 'float',
-			default: 0
+			default: gender
 		},
 		{
 			name: 'country',
