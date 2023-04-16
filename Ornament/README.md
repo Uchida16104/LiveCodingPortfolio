@@ -1,2 +1,2 @@
 # Ornament
-` It's inspired by MuseScore. `
+` * It's inspired by MuseScore. * `
