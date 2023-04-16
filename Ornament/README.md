@@ -1,7 +1,6 @@
 # Ornament
 `It's inspired by MuseScore.`   
 `They're ornaments for Sonic PI included arpeggio, glissando, or pitch bend.`
-<br>
 ## Usage
 ### 1. Read the file
 1. Download "function-list.rb" on your directory.
@@ -9,3 +8,4 @@
 ```load /path/to/func-list.rb```
 3. Then, you can use ornaments on Sonic PI.
 ### 2. Use ornaments
+For more information, click [here]("https://musescore.org/en/handbook/3/articulations-and-ornaments").
