@@ -247,3 +247,12 @@ def pitch_bend(init,mid,term,time,rel,slide)
   control s,note:term
   sleep time
 end
+def overtone(note,init,term,dist,time)
+  ary=[]
+  for i in init..term do
+    j=midi_to_hz(note)*(i+dist)
+    k=hz_to_midi(j)
+    ary.push(k)
+  end
+  play_pattern_timed ary,[time]
+end
