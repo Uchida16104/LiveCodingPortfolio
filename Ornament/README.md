@@ -1,6 +1,6 @@
 # Ornament
-` It's inspired by MuseScore. `  
-` They're ornaments for Sonic PI included arpeggio, glissando, or pitch bend. `
+<p>It's inspired by MuseScore.</p>
+<p>They're ornaments for Sonic PI included arpeggio, glissando, or pitch bend.</p>
 ## Usage
 ### 1. Read the file
 1. Download "function-list.rb" on your directory.
