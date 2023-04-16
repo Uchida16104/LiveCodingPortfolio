@@ -9,3 +9,5 @@
 3. Then, you can use ornaments on Sonic PI.
 ### 2. Use ornaments
 For more information, click [here](https://musescore.org/en/handbook/3/articulations-and-ornaments).
+## Log
+* Created on Apr. 16th. 2023.
