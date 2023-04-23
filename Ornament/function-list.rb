@@ -292,3 +292,6 @@ def thirty_second_note(init)
   play init,sustain:2/32.to_f
   sleep 2/32.to_f
 end
+def microtone(num,edo)
+  play hz_to_midi(midi_to_hz(60)*2**(num/edo.to_f))
+end
