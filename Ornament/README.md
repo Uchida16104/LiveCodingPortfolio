@@ -13,3 +13,4 @@ For more information, click the followings.
 2. [OpenMusic](https://github.com/openmusic-project/openmusic/blob/dd9bb5510edb2924b5ac3a7494aca8c4d38962f6/OPENMUSIC/resources/reference/inharm-ser.html)
 ## Log
 * Created on Apr. 16th. 2023.
+* Released on Apr. 23rd. 2023.
