@@ -1,7 +1,8 @@
 #Ornaments
 #Inspired by MuseScore
 #By Hirotoshi Uchida
-#On Apr. 16th. 2023
+#Created on Apr. 16th. 2023
+#Released on Apr. 16th. 2023
 def arpeggio(note1,note2,note3)
   play note1,sustain:2
   sleep 2/32.to_f
