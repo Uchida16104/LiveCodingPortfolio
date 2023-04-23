@@ -2,7 +2,7 @@
 #Inspired by MuseScore
 #By Hirotoshi Uchida
 #Created on Apr. 16th. 2023
-#Released on Apr. 16th. 2023
+#Released on Apr. 23rd. 2023
 def arpeggio(note1,note2,note3)
   play note1,sustain:2
   sleep 2/32.to_f
