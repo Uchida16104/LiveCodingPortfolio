@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Move directory
-        run: cd /home/runner/work/LiveCodingPortfolio
+        run: cd /home/runner/work/LiveCodingPortfolio/LiveCodingPortfolio
       - name: Update apt Package lists
         run: sudo apt update -y
       - name: Upgrade apt version
