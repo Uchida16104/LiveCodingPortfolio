@@ -40,7 +40,7 @@ jobs:
       - name: Sleep random time
         run: echo "  sleep "+rand.round(1).to_s >> index.rb
       - name: End loop
-        run: echo "end"
+        run: echo "end" >> index.rb
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
