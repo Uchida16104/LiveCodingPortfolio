@@ -1,4 +1,4 @@
-name: patternmakers
+name: tone-maker
 
 on:
   push:
@@ -37,8 +37,6 @@ jobs:
         run: echo "loop do" >> index.rb
       - name: Play one of defined octaves
         run: echo "  play "+octave.sample.to_s >> index.rb
-      - name: Sleep random time
-        run: echo "  sleep "+rand.round(1).to_s >> index.rb
       - name: End loop
         run: echo "end" >> index.rb
       - name: Pre-install LFS
