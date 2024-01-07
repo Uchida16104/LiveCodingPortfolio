@@ -1,0 +1,76 @@
+name: network
+
+on:
+  push:
+  schedule:
+    - cron: "0 * * * *"
+    - cron: "20 * * * *"
+    - cron: "40 * * * *"
+    
+jobs:
+  job-with-network-scan:
+    runs-on: ubuntu-latest
+    permissions:
+     actions: write
+     checks: write
+     contents: write
+     deployments: write
+     issues: write
+     packages: write
+     pull-requests: write
+     repository-projects: write
+     security-events: write
+     statuses: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Move directory
+        run: cd /home/runner/work/LiveCodingPortfolio/PatternsMaker
+      - name: Update apt Package lists
+        run: sudo apt update -y
+      - name: Upgrade apt version
+        run: sudo apt upgrade -y
+      - name: Install Ruby
+        run: sudo apt-get install ruby-full -y
+      - name: Run Ruby
+        run: ruby
+      - name: Define synth
+        run: synth=["bass_foundation", "bass_highend", "beep", "blade", "bnoise", "chipbass", "chiplead", "chipnoise", "cnoise", "dark_ambience", "dpulse", "dsaw", "dtri", "dull_bell", "fm", "gabberkick", "gnoise", "growl", "hollow", "hoover", "kalimba", "mod_beep", "mod_dsaw", "mod_fm", "mod_pulse", "mod_saw", "mod_sine", "mod_tri", "noise", "organ_tonewheel", "piano", "pluck", "pnoise", "pretty_bell", "prophet", "pulse", "rhodey", :rodeo, :saw, "sc808_bassdrum", "sc808_clap", "sc808_claves", "sc808_closed_hihat", "sc808_congahi", "sc808_congalo", "sc808_congamid", "sc808_cowbell", "sc808_cymbal", "sc808_maracas", "sc808_open_hihat", "sc808_rimshot", "sc808_snare", "sc808_tomhi", "sc808_tomlo", "sc808_tommid", "sine", "sound_in", "sound_in_stereo", "square", "subpulse", "supersaw", "tb303", "tech_saws", "tri", "winwood_lead", "zawa"] >> index.rb
+      - name: Define octave
+        run: octave=[60,61,62,63,64,65,66,67,68,69,70,71] >> index.rb
+      - name: Initialize loop
+        run: puts "loop do" >> index.rb
+      - name: Use defined synth
+        run: puts "  use_synth :"+synth.shuffle.sample >> index.rb
+      - name: Play one of defined octaves
+        run: puts "  play "+octave.sample.to_s >> index.rb
+      - name: Sleep random time
+        run: puts "  sleep "+rand.round(1).to_s >> index.rb
+      - name: End loop
+        run: puts "end" >> index.rb
+      - name: Pre-install LFS
+        run: sudo apt-get install git-lfs
+      - name: Install LFS
+        run: git lfs install
+      - name: Confirm LFS version
+        run: git lfs --version
+      - name: Enable LFS
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+          clean: false
+      - name: Reset commits
+        run: git reset --hard
+      - name: Register user email
+        run: git config --global user.email "uho02741358@gmail.com"
+      - name: Register user name
+        run: git config --global user.name "Uchida16104"
+      - name: Initialize Git
+        run: git init
+      - name: Register files
+        run: git add .
+      - name: Commit files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Update files
+        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push files
+        run: git push --force-with-lease origin main
