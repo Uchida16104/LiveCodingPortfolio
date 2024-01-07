@@ -33,16 +33,12 @@ jobs:
         run: ruby
       - name: Define octave
         run: octave=[60,61,62,63,64,65,66,67,68,69,70,71] >> index.rb
-      - name: Initialize loop
-        run: puts "loop do" >> index.rb
       - name: Use defined synth
         run: puts "  use_synth :"+synth.shuffle.sample >> index.rb
       - name: Play one of defined octaves
         run: puts "  play "+octave.sample.to_s >> index.rb
       - name: Sleep random time
         run: puts "  sleep "+rand.round(1).to_s >> index.rb
-      - name: End loop
-        run: puts "end" >> index.rb
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
