@@ -34,7 +34,7 @@ jobs:
       - name: Initialize loop
         run: echo "loop do" >> index.rb
       - name: Play one of defined octaves
-        run: echo "  play "+$((RANDOM%231+1)) >> index.rb
+        run: echo "  play "$((RANDOM%231+1)) >> index.rb
       - name: End loop
         run: echo "end" >> index.rb
       - name: Pre-install LFS
