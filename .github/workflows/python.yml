@@ -59,7 +59,7 @@ jobs:
       - name: Run ShellScript
         run: bash
       - name: Play synth
-        run: echo -n "p1>>pluck(1."$(bc <<< "scale=3; $RANDOM/32767")")" >> index.py
+        run: echo -n "p1>>pluck(1"$(bc <<< "scale=3; $RANDOM/32767")")" >> index.py
       - name: Register files
         run: git add .
       - name: Commit files
