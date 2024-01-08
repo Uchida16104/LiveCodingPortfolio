@@ -48,6 +48,10 @@ jobs:
         run: git rm index.rb
       - name: Commit to remove files
         run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Fetch to remove files
+        run: git fetch
+      - name: Merge to remove files
+        run: git merge
       - name: Push to remove files
         run: git push --force-with-lease origin master
       - name: Initialize Git
