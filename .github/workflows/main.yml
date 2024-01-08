@@ -59,7 +59,7 @@ jobs:
       - name: Commit to remove files
         run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
       - name: Push to remove files
-        run: git push --force-and-lease origin master
+        run: git push --force-with-lease origin master
       - name: Initialize Git
         run: git init
       - name: Register files
