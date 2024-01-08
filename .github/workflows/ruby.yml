@@ -27,8 +27,6 @@ jobs:
         run: sudo apt update -y
       - name: Upgrade apt version
         run: sudo apt upgrade -y
-      - name: Install Ruby
-        run: sudo apt-get install ruby-full -y
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
@@ -54,8 +52,6 @@ jobs:
         run: git push --force-with-lease origin master
       - name: Initialize Git
         run: git init
-      - name: Run Ruby
-        run: ruby
       - name: Initialize loop
         run: echo "loop do" >> index.rb
       - name: Play one of defined octaves
