@@ -1,2 +1,2 @@
-setcps 0.305
+setcps 0.286
 d1 $ s "bd hh cp hh"
