@@ -6,7 +6,7 @@ on:
     - cron: "*/5 * * * *"
     
 jobs:
-  job-with-haskell:
+  job-with-python:
     runs-on: ubuntu-latest
     permissions:
      actions: write
@@ -27,20 +27,6 @@ jobs:
         run: sudo apt update -y
       - name: Upgrade apt version
         run: sudo apt upgrade -y
-      - name: Install necessary tools
-        run: sudo apt install build-essential libbz2-dev libdb-dev libreadline-dev libffi-dev libgdbm-dev liblzma-dev libncursesw5-dev libsqlite3-dev libssl-dev zlib1g-dev uuid-dev tk-dev
-      - name: Download Python
-        run: wget https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tar.xz
-      - name: Setup environment
-        run: tar xJf Python-3.12.0.tar.xz
-      - name: Move directory
-        run: cd Python-3.12.0
-      - name: Configure
-        run: ./configure
-      - name: Get make
-        run: make
-      - name: Install make
-        run: sudo make install
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
