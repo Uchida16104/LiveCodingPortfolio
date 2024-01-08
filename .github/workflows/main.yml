@@ -60,6 +60,8 @@ jobs:
         run: echo "loop do" >> index.rb
       - name: Play one of defined octaves
         run: echo "  play "$((RANDOM%231+1)) >> index.rb
+      - name: Sleep time
+        run: echo "  sleep 0"$(bc <<< "scale=3; $RANDOM/32767") >> index.rb
       - name: End loop
         run: echo "end" >> index.rb
       - name: Register files
