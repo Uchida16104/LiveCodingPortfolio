@@ -1,0 +1,84 @@
+name: sonicpi-maker
+
+on:
+  push:
+  schedule:
+    - cron: "*/5 * * * *"
+    
+jobs:
+  job-with-ruby:
+    runs-on: ubuntu-latest
+    permissions:
+     actions: write
+     checks: write
+     contents: write
+     deployments: write
+     issues: write
+     packages: write
+     pull-requests: write
+     repository-projects: write
+     security-events: write
+     statuses: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Move directory
+        run: cd /home/runner/work/LiveCodingPortfolio/LiveCodingPortfolio
+      - name: Update apt Package lists
+        run: sudo apt update -y
+      - name: Upgrade apt version
+        run: sudo apt upgrade -y
+      - name: Install Haskell
+        run: wget -qO- https://get.haskellstack.org/ | sh
+      - name: Setup environment
+        run: stack setup
+      - name: set PATH for stack command
+        run: PATH="$HOME/.local/bin:$PATH"
+      - name: set stack ghc aliases
+        run: alias ghci='stack ghci'
+        run: alias ghc='stack ghc --'
+        run: alias runghc='stack runghc --'
+      - name: Pre-install LFS
+        run: sudo apt-get install git-lfs
+      - name: Install LFS
+        run: git lfs install
+      - name: Confirm LFS version
+        run: git lfs --version
+      - name: Enable LFS
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+          clean: false
+      - name: Reset commits
+        run: git reset --hard
+      - name: Register user email
+        run: git config --global user.email "uho02741358@gmail.com"
+      - name: Register user name
+        run: git config --global user.name "Uchida16104"
+      - name: Remove files
+        run: git rm index.rb
+      - name: Commit to remove files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Push to remove files
+        run: git push --force-with-lease origin master
+      - name: Initialize Git
+        run: git init
+      - name: Define array
+        run: readonly ARRAY=("gabba" "bd" "sd" "sn" "cp" "hh" "ho" "hc")
+      - name: Define track
+        run: echo -n d1 $ s \" >> index.hs
+      - name: Initialize loop
+        run: for i in {1..16} ; do
+      - name: Choose sample
+        run: echo -n ${ARRAY[$(($RANDOM % ${#ARRAY[*]}))]}" " >> index.hs
+      - name: End loop
+        run: done
+      - name: End output
+        run: echo -n \" >> index.hs
+      - name: Register files
+        run: git add .
+      - name: Commit files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Update files
+        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push files
+        run: git push --force-with-lease origin master
