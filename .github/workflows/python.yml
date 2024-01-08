@@ -1,0 +1,84 @@
+name: foxdot-maker
+
+on:
+  push:
+  schedule:
+    - cron: "*/5 * * * *"
+    
+jobs:
+  job-with-haskell:
+    runs-on: ubuntu-latest
+    permissions:
+     actions: write
+     checks: write
+     contents: write
+     deployments: write
+     issues: write
+     packages: write
+     pull-requests: write
+     repository-projects: write
+     security-events: write
+     statuses: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Move directory
+        run: cd /home/runner/work/LiveCodingPortfolio/LiveCodingPortfolio
+      - name: Update apt Package lists
+        run: sudo apt update -y
+      - name: Upgrade apt version
+        run: sudo apt upgrade -y
+      - name: Install necessary tools
+        run: sudo apt install build-essential libbz2-dev libdb-dev libreadline-dev libffi-dev libgdbm-dev liblzma-dev libncursesw5-dev libsqlite3-dev libssl-dev zlib1g-dev uuid-dev tk-dev
+      - name: Download Python
+        run: wget https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tar.xz
+      - name: Setup environment
+        run: tar xJf Python-3.12.0.tar.xz
+      - name: Move directory
+        run: cd Python-3.12.0
+      - name: Configure
+        run: ./configure
+      - name: Get make
+        run: make
+      - name: Install make
+        run: sudo make install
+      - name: Pre-install LFS
+        run: sudo apt-get install git-lfs
+      - name: Install LFS
+        run: git lfs install
+      - name: Confirm LFS version
+        run: git lfs --version
+      - name: Enable LFS
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+          clean: false
+      - name: Reset commits
+        run: git reset --hard
+      - name: Register user email
+        run: git config --global user.email "uho02741358@gmail.com"
+      - name: Register user name
+        run: git config --global user.name "Uchida16104"
+      - name: Remove files
+        run: git rm index.py
+      - name: Commit to remove files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Fetch to remove files
+        run: git fetch
+      - name: Merge to remove files
+        run: git merge
+      - name: Push to remove files
+        run: git push --force-with-lease origin master
+      - name: Initialize Git
+        run: git init
+      - name: Run ShellScript
+        run: bash
+      - name: Play synth
+        run: echo -n "p1>>pluck(1."$(bc <<< "scale=3; $RANDOM/32767")")" >> index.py
+      - name: Register files
+        run: git add .
+      - name: Commit files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Update files
+        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push files
+        run: git push --force-with-lease origin master
