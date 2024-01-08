@@ -54,6 +54,12 @@ jobs:
         run: git config --global user.email "uho02741358@gmail.com"
       - name: Register user name
         run: git config --global user.name "Uchida16104"
+      - name: Remove files
+        run: git rm index.rb
+      - name: Commit to remove files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Push to remove files
+        run: git push --force-and-lease origin master
       - name: Initialize Git
         run: git init
       - name: Register files
