@@ -70,12 +70,12 @@ jobs:
         run: git init
       - name: Run ShellScript
         run: bash
-      - name: Define array
-        run: readonly ARRAY=("gabba" "bd" "sd" "sn" "cp" "hh" "ho" "hc")
+      - name: Set cps
+        run: echo "setcps 0"$(bc <<< "scale=3; $RANDOM/32767") >> index.hs
       - name: Define track
         run: echo -n d1 $ s \" >> index.hs
       - name: Choose sample
-        run: echo -n ${ARRAY[$(($RANDOM % ${#ARRAY[*]}))]}" " >> index.hs
+        run: echo -n "bd hh cp hh" >> index.hs
       - name: End output
         run: echo -n \" >> index.hs
       - name: Register files
