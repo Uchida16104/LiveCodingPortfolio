@@ -28,7 +28,7 @@ jobs:
       - name: Upgrade apt version
         run: sudo apt upgrade -y
       - name: Install Haskell
-        run: wget -qO- https://get.haskellstack.org/ | sh -f
+        run: curl -sSL https://get.haskellstack.org/ | sh -s - -f
       - name: Setup environment
         run: stack setup
       - name: set PATH for stack command
