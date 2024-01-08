@@ -6,7 +6,7 @@ on:
     - cron: "*/5 * * * *"
     
 jobs:
-  job-with-ruby:
+  job-with-haskell:
     runs-on: ubuntu-latest
     permissions:
      actions: write
