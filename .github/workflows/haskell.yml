@@ -27,18 +27,6 @@ jobs:
         run: sudo apt update -y
       - name: Upgrade apt version
         run: sudo apt upgrade -y
-      - name: Install Haskell
-        run: curl -sSL https://get.haskellstack.org/ | sh -s - -f
-      - name: Setup environment
-        run: stack setup
-      - name: set PATH for stack command
-        run: PATH="$HOME/.local/bin:$PATH"
-      - name: set stack ghc aliases step1
-        run: alias ghci='stack ghci'
-      - name: set stack ghc aliases step2
-        run: alias ghc='stack ghc --'
-      - name: set stack ghc aliases step3
-        run: alias runghc='stack runghc --'
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
