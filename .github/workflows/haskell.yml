@@ -75,7 +75,7 @@ jobs:
       - name: Define track
         run: echo -n d1 $ s \" >> index.hs
       - name: Improve space
-        run: sudo find . -type f -name "*.sh" -print0 | xargs -0 nkf --overwrite -w -Lu
+        run: sudo find . -type f -name "*.sh" -print0 | xargs -0 echo --overwrite -w -Lf
       - name: Initialize loop
         run: for i in {1..16} ; do
       - name: Choose sample
