@@ -29,14 +29,6 @@ jobs:
         run: sudo apt upgrade -y
       - name: Install Ruby
         run: sudo apt-get install ruby-full -y
-      - name: Run Ruby
-        run: ruby
-      - name: Initialize loop
-        run: echo "loop do" >> index.rb
-      - name: Play one of defined octaves
-        run: echo "  play "$((RANDOM%231+1)) >> index.rb
-      - name: End loop
-        run: echo "end" >> index.rb
       - name: Pre-install LFS
         run: sudo apt-get install git-lfs
       - name: Install LFS
@@ -62,6 +54,14 @@ jobs:
         run: git push --force-with-lease origin master
       - name: Initialize Git
         run: git init
+      - name: Run Ruby
+        run: ruby
+      - name: Initialize loop
+        run: echo "loop do" >> index.rb
+      - name: Play one of defined octaves
+        run: echo "  play "$((RANDOM%231+1)) >> index.rb
+      - name: End loop
+        run: echo "end" >> index.rb
       - name: Register files
         run: git add .
       - name: Commit files
