@@ -1,4 +1,4 @@
-name: sonicpi-maker
+name: tidalcycles-maker
 
 on:
   push:
