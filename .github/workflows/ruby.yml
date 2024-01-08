@@ -1,4 +1,4 @@
-name: tone-maker
+name: sonicpi-maker
 
 on:
   push:
