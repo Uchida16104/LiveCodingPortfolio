@@ -68,6 +68,8 @@ jobs:
         run: git push --force-with-lease origin master
       - name: Initialize Git
         run: git init
+      - name: Run ShellScript
+        run: bash
       - name: Define array
         run: readonly ARRAY=("gabba" "bd" "sd" "sn" "cp" "hh" "ho" "hc")
       - name: Define track
