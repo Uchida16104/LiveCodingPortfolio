@@ -1,4 +1,4 @@
 loop do
-  play 193
-  sleep 0.332
+  play 218
+  sleep 0.536
 end
