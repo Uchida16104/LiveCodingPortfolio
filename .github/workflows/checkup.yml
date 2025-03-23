@@ -1,0 +1,40 @@
+name: Check Index Files Existence
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Check for index files
+        id: check_files
+        run: |
+          missing_files=""
+          for file in index.hs index.rb index.py; do
+            if [ ! -f "$file" ]; then
+              missing_files="$missing_files $file"
+            fi
+          done
+          echo "Missing files:$missing_files"
+          # Set output variable (using recommended GITHUB_OUTPUT)
+          echo "missing_files=$missing_files" >> $GITHUB_OUTPUT
+
+      - name: Send alert email if any file is missing
+        if: steps.check_files.outputs.missing_files != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          subject: "Alert: Missing index file(s) in LiveCodingPortfolio repository"
+          body: |
+            The following index file(s) are missing in the repository:
+            ${{ steps.check_files.outputs.missing_files }}
+          to: ${{ secrets.GMAIL_USERNAME }}
+          from: noreply@github.com
