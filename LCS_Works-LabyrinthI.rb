@@ -1,4 +1,4 @@
-load_synthdefs "/Users/hirotoshiuchida/my-synths"
+load_synthdefs "/path/to/my-synths"
 midi_channel = 1
 
 define :send_midi_note_on do |n|
