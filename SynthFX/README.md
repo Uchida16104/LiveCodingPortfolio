@@ -34,8 +34,6 @@ I used [ChatGPT](https://chat.openai.com/), [SuperCollider](https://supercollide
 
 1. [SynthFX.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/SynthFX/SynthFX.rb)
 
-2. [LCS_Works-LabyrinthI.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCS_Works-LabyrinthI.rb)
-
 ## Log
 
 * Created on Mar. 29th. 2025.
