@@ -32,9 +32,9 @@ I used [ChatGPT](https://chat.openai.com/), [SuperCollider](https://supercollide
 
 * Sonic Pi
 
-1. [LCS_Works-LabyrinthI.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCS_Works-LabyrinthI.rb)
+1. [SynthFX.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/SynthFX/SynthFX.rb)
 
-2. [LCS_Works-Labyrinth_II.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCS_Works-Labyrinth_II.rb)
+2. [LCS_Works-LabyrinthI.rb](https://github.com/Uchida16104/LiveCodingPortfolio/blob/master/LCS_Works-LabyrinthI.rb)
 
 ## Log
 
