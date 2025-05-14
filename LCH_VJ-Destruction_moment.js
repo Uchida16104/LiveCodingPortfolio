@@ -1,0 +1,22 @@
+await loadScript("https://nodegl.glitch.me/function-list.js");
+repeatoperator("diff", () => src(o0)
+		.scroll([-1, 1].reverse()
+			.ease('easeInOutHalf')
+			.smooth(1 / 3)
+			.fit(1 / 4)
+			.offset(1 / 5)
+			.fast(1 / 6), [-1, 1].reverse()
+			.ease('easeInOutCubic')
+			.smooth(1 / 4)
+			.fit(1 / 5)
+			.offset(1 / 6)
+			.fast(1 / 7)), 10, voronoi().pixelate("st.x*pow(3.141592653589,5.0)", "st.y*pow(3.141592653589,5.0)"))
+		.posterize((Math.E + Math.PI) * Math.pow(Math.E, Math.E)).modulatePixelate(src(o0).hue("cos(st.x/time)+sin(st.y/time)"))
+	.blend(o0, [0, 1].reverse()
+		.ease('easeInOutQuart')
+		.smooth(1 / 5)
+		.fit(1 / 6)
+		.offset(1 / 7)
+		.fast(1 / 8))
+	.out();
+screencap();
