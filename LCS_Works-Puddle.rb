@@ -1,5 +1,5 @@
 use_random_seed 2025
-end_time = Time.now.to_f + 120
+end_time = Time.now.to_f + 200
 with_fx :reverb, mix: 0.6, room: 0.8 do
   10.times do
     in_thread do
