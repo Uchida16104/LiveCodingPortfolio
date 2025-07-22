@@ -1,0 +1,28 @@
+await loadScript("https://unpkg.com/hydra-nodegl");
+setResolution(800, 800);
+zebra(src(o0)
+	.painting(6.0, 0.2, 0.8, 0.4, 0.6, 2.0, 0.4, 0.4, 1.0, 1.5, 0.3, 0.2, 0.6, 0.3)
+	.over(2, 0, 50, 0)
+	.sketch(1, 1 / 100, 1 / 4, 1 / 4)
+	.oil()
+	.watercolor()
+	.sketch()
+	.echo()
+	.chorus()
+	.vibrato()
+	.colorama(1)
+	.ringModulate()
+	.modulateRingModulator(o0)
+	.layer(chaos()
+		.sub(square()
+			.polar()
+			.mask(pulse()
+				.swirl(10))))
+	.modulateShear(o0, .1)
+	.diff(sphere())
+	.diff(lissajouslaser())
+	.hue("st.x*0.1+st.y*0.2")
+	.invert()
+	.hue(.5), 10, 1, Math.sin, 0.1)
+	.out();
+screencap();
