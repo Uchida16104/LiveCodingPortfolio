@@ -269,7 +269,7 @@ define :glitch do |time = 1|
   end
 end
 define :crash do
-  crash = "/Users/hirotoshiuchida/crash.mp3"
+  crash = "/path/to/crash.mp3"
   with_fx :reverb, room: 0.5 do
     sample crash, amp: 0.5, pitch_dis: 1
     sleep sample_duration(crash)
