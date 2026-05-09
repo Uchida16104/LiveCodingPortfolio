@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-import დრო
+import sys
 import time
 import uuid
 import shutil
