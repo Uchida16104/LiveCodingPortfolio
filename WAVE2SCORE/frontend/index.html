@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAVE2SCORE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+</head>
+<body class="min-h-screen bg-zinc-950 text-zinc-100">
+  <main class="mx-auto max-w-3xl px-4 py-10">
+    <section class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 shadow-2xl">
+      <h1 class="text-3xl font-bold">WAVE2SCORE</h1>
+      <p class="mt-2 text-sm text-zinc-400">
+        Analyze to choose .wav file, and download ZIP
+      </p>
+
+      <form id="uploadForm" class="mt-6 space-y-4">
+        <label class="block">
+          <span class="mb-2 block text-sm text-zinc-300">INPUT_FILE (.wav)</span>
+          <input
+            id="wavFile"
+            name="file"
+            type="file"
+            accept=".wav,audio/wav"
+            required
+            class="block w-full cursor-pointer rounded-2xl border border-zinc-700 bg-zinc-950 p-3 text-sm"
+            _="on change set #selectedName.textContent to my.files[0].name"
+          />
+        </label>
+
+        <div class="flex items-center gap-3">
+          <button
+            id="submitBtn"
+            type="submit"
+            class="rounded-2xl bg-white px-5 py-3 font-semibold text-zinc-950"
+          >
+            Launch to Analyze
+          </button>
+          <span id="selectedName" class="text-sm text-zinc-400">Option</span>
+        </div>
+      </form>
+
+      <div class="mt-6">
+        <div class="h-3 overflow-hidden rounded-full bg-zinc-800">
+          <div id="progressBar" class="h-full w-0 rounded-full bg-white"></div>
+        </div>
+        <p id="statusText" class="mt-3 text-sm text-zinc-300">Waiting</p>
+      </div>
+
+      <div id="resultArea" class="mt-6 hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-4"></div>
+    </section>
+  </main>
+
+  <script>
+    const API_BASE = "https://YOUR-RENDER-SERVICE.onrender.com";
+
+    const form = document.getElementById("uploadForm");
+    const fileInput = document.getElementById("wavFile");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusText = document.getElementById("statusText");
+    const progressBar = document.getElementById("progressBar");
+    const resultArea = document.getElementById("resultArea");
+
+    function setProgress(v) {
+      progressBar.style.width = `${Math.max(0, Math.min(100, v))}%`;
+    }
+
+    async function pollStatus(jobId) {
+      const timer = setInterval(async () => {
+        try {
+          const res = await fetch(`${API_BASE}/api/jobs/${jobId}`);
+          const data = await res.json();
+
+          if (data.status === "queued") {
+            statusText.textContent = "Waiting...";
+            setProgress(20);
+          } else if (data.status === "running") {
+            statusText.textContent = "Analyzing...";
+            setProgress(60);
+          } else if (data.status === "completed") {
+            clearInterval(timer);
+            statusText.textContent = "Completed";
+            setProgress(100);
+            resultArea.classList.remove("hidden");
+            resultArea.innerHTML = `
+              <div class="space-y-3">
+                <p class="font-semibold">Created ZIP.</p>
+                <a
+                  href="${API_BASE}/api/jobs/${jobId}/download"
+                  class="inline-flex rounded-2xl bg-white px-4 py-2 font-semibold text-zinc-950"
+                >
+                  Download ZIP
+                </a>
+              </div>
+            `;
+          } else if (data.status === "failed") {
+            clearInterval(timer);
+            statusText.textContent = `Failed: ${data.error || "unknown error"}`;
+            setProgress(0);
+          }
+        } catch (e) {
+          clearInterval(timer);
+          statusText.textContent = "Network Error";
+        }
+      }, 2000);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      if (!file.name.toLowerCase().endsWith(".wav")) {
+        statusText.textContent = "INPUT_FILE must be .wav";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      statusText.textContent = "Uploding...";
+      setProgress(10);
+
+      const fd = new FormData();
+      fd.append("file", file);
+
+      try {
+        const res = await fetch(`${API_BASE}/api/jobs`, {
+          method: "POST",
+          body: fd,
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || "upload failed");
+        }
+
+        const data = await res.json();
+        statusText.textContent = `Created Job: ${data.job_id}`;
+        setProgress(30);
+        await pollStatus(data.job_id);
+      } catch (err) {
+        statusText.textContent = `Error: ${err.message}`;
+        setProgress(0);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Launch to Analyze";
+      }
+    });
+
+    motion.animate(progressBar, { scaleX: [0.98, 1.0] }, {
+      duration: 1.1,
+      repeat: Infinity,
+      direction: "alternate",
+      easing: "ease-in-out",
+    });
+  </script>
+</body>
+</html>
