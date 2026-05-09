@@ -21,5 +21,8 @@ This script performs STFT + F0 tracking + frame features, and runs:
 - `<base>_detailed_events.csv`  (per-event with ADSR/pan/tempo/more)
 - `<base>_detailed_art_score.png`  (square, shapes-only avant-garde score)
 
+## Trial
+[URL](https://uchida16104.github.io/LiveCodingPortfolio/WAVE2SCORE/frontend)
+
 Developed on: <i><strong>12th, Dec., 2025</strong></i><br />
 Author: <i><strong>Hirotoshi Uchida</strong></i>
