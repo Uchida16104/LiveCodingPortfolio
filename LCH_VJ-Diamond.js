@@ -59,7 +59,6 @@ setFunction({
     return p * 0.5 + 0.5;
   `
 });
-
 function videocap(target = o0, durationMs = 5000, options = {}) {
 	const {
 		filename = `hydra-${Date.now()}.webm`,
