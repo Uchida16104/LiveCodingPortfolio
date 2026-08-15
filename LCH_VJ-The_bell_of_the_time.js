@@ -1,0 +1,33 @@
+await loadScript("https://unpkg.com/hydra-nodegl");
+setResolution(1600, 1600);
+synth = () => solid()
+	.add(osc(10), [1, 0, 0, 0, 0, 0])
+	.add(gradient(1), [0, 1, 0, 0, 0, 0])
+	.add(noise(1), [0, 0, 1, 0, 0, 0])
+	.add(voronoi(), [0, 0, 0, 1, 0, 0])
+	.add(visual(), [0, 0, 0, 0, 1, 0])
+	.add(huecircle(), [0, 0, 0, 0, 0, 1]);
+synth()
+	.modulate(synth())
+	.modulateKaleid(synth())
+	.modulatePixelate(synth())
+	.modulateRepeat(synth())
+	.modulateRepeatX(synth())
+	.modulateRepeatY(synth())
+	.modulateScrollX(synth())
+	.modulateScrollY(synth())
+	.modulateRotate(synth())
+	.modulateScale(synth())
+	.modulateHue(synth())
+	.modulateWarp(synth())
+	.modulateSpiral(synth())
+	.modulateShear(synth())
+	.modulateRainbow(synth())
+	.layer(synth()
+		.sub(synth())
+		.mask(synth()))
+	.diff(synth())
+	.add(synth())
+	.blend(synth())
+	.out();
+screencap();
