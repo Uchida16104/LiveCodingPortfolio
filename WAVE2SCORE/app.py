@@ -55,8 +55,11 @@ def run_job(job_id: str):
         return
 
     job_dir = Path(job["job_dir"])
-    input_path = Path(job["input_path"])
+    input_path = Path(job["input_path"]).resolve()
     out_base = str(job_dir / "result")
+
+    if not str(input_path).startswith(str(WORK_DIR.resolve())):
+        raise RuntimeError("Invalid input path: outside of work directory")
 
     try:
         set_job(job_id, status="running", message="Running main.py")
